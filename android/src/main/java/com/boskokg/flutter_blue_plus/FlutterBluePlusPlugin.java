@@ -785,6 +785,7 @@ public class FlutterBluePlusPlugin implements FlutterPlugin, MethodCallHandler, 
               sink.success(Protos.BluetoothState.newBuilder().setState(Protos.BluetoothState.State.OFF).build().toByteArray());
               break;
             case BluetoothAdapter.STATE_TURNING_OFF:
+              mDevices.clear();
               sink.success(Protos.BluetoothState.newBuilder().setState(Protos.BluetoothState.State.TURNING_OFF).build().toByteArray());
               break;
             case BluetoothAdapter.STATE_ON:
